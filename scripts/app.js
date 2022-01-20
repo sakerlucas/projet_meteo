@@ -30,7 +30,7 @@ const icon = (data) => {
             conditions = "http://openweathermap.org/img/wn/04d.png"
             break;
         case "pluvieux":
-            conditions = "http://openweathermap.org/img/wn/09d.png"
+            conditions = "http://openweathermap.org/img/wn/10d.png"
             break;
         case "ciel dégagé":
             conditions = "http://openweathermap.org/img/wn/01d.png"
@@ -47,13 +47,19 @@ const icon = (data) => {
         case "brumeux":
             conditions = "http://openweathermap.org/img/wn/50d.png"
             break;
+        case "peu nuageux":
+            conditions = "http://openweathermap.org/img/wn/02d.png"
+            break;
+        case "averse":
+            conditions = "http://openweathermap.org/img/wn/09d.png"
+            break;
         default:
             break;
     }
     return conditions
 }
 
-function verifQualAir(data){
+function verifQualAir(data) {
     let qualite = ""
 
     if (data <= 50) {
@@ -71,7 +77,7 @@ function verifQualAir(data){
     return qualite
 }
 
-function colorQualAir(data){
+function colorQualAir(data) {
     let color = ""
 
     if (data <= 50) {
@@ -122,7 +128,7 @@ function afficherDonness(data) {
     `
 }
 
-function afficherQualAir(data, color){
+function afficherQualAir(data, color) {
     document.getElementById('donneesAir').innerHTML += `
         <h4>Qualité de l'air</4>
         <p id="colorAir" class="mt-3 ${color}">${data}</p>
