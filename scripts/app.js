@@ -151,13 +151,11 @@ const printDonneesCity = () => {
                 sunriseH = "0" + sunrise.getHours()
                 sunriseM = "0" + sunrise.getMinutes()
                 sunrise = sunriseH.substr(-2) + ':' + sunriseM.substr(-2)
-                //console.log(sunrise);
                 sunsetH_timestamp = results.sys.sunset
                 sunset = new Date(sunsetH_timestamp * 1000);
                 sunsetH = "0" + sunset.getHours()
                 sunsetM = "0" + sunset.getMinutes()
                 sunset = sunsetH.substr(-2) + ':' + sunsetM.substr(-2)
-                //console.log(sunset);
                 afficherDonness(results)
             })
             .catch(err => console.log(err))
@@ -172,6 +170,14 @@ const printDonneesCity = () => {
     })
 }
 
+function reload(){
+    document.getElementById('btnReload').addEventListener('click', (evt) => {
+        evt.preventDefault()
+        window.location.reload()
+    })
+}
+
 window.onload = () => {
     printDonneesCity()
+    reload()
 }
