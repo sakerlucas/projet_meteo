@@ -110,7 +110,7 @@ function afficherDonness(data) {
             <div class="d-flex flex-column align-items-center mt-3">
                 <h5>Conditions :</h5>
                 ${data.weather[0].description}
-                <img src="${icon(data.weather[0].description)}" alt="temps" height="50" width="50">
+                <!-- <img src="${icon(data.weather[0].description)}" alt="temps" height="50" width="50"> -->
             </div>
         </div>
         <div class="d-flex justify-content-evenly mt-4">
